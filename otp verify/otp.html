@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+        /* Add this CSS to your style.css file */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            width: 2rem; /* Adjust width of each input field */
+            text-align: center; /* Center align text */
+            margin: 0 0.3rem; /* Add some spacing between input fields */
+        }
+
+        input[type="number"]:focus {
+            outline: none; /* Remove default focus style */
+            border: 2px solid #007bff; /* Add custom focus style */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <i class="bx bxs-check-shield"></i>
+        </header>
+        <h4>Enter OTP Code</h4>
+        <form action="#">
+            <div class="input-field">
+                <input type="number" maxlength="1" onkeyup="moveToNext(this, 1)" />
+                <input type="number" maxlength="1" onkeyup="moveToNext(this, 2)" />
+                <input type="number" maxlength="1" onkeyup="moveToNext(this, 3)" />
+                <input type="number" maxlength="1" onkeyup="moveToNext(this, 4)" />
+                <input type="number" maxlength="1" onkeyup="moveToNext(this, 5)" />
+                <input type="number" maxlength="1" onkeyup="moveToNext(this, 6)" />
+            </div>
+            <button>Verify OTP</button>
+        </form>
+    </div>
+    <script>
+        function moveToNext(input, nextInputIndex) {
+            var maxLength = parseInt(input.getAttribute("maxlength"));
+            var inputValue = input.value;
+            if (inputValue.length >= maxLength) {
+                var nextInput = document.querySelector(
+                    'input[type="number"][maxlength="1"]:nth-of-type(' +
+                    (nextInputIndex + 1) +
+                    ')'
+                );
+                if (nextInput) {
+                    nextInput.focus();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
