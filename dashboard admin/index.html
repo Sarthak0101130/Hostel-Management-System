@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Leave Management System</title>
+  <link rel="stylesheet" href="main.css">
+  <!-- box icon -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo_details">
+      <i class='bx bx-code-alt'></i>
+      <div class="logo_name">
+        Hostel Leave
+      </div>
+    </div>
+    <ul>
+      <li>
+        <a href="#" class="active">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">
+            Dashboard
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-user'></i>
+          <span class="links_name">
+            Students
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-calendar'></i>
+          <span class="links_name">
+            Leave Requests
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-check-shield'></i>
+          <span class="links_name">
+            Approvals
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-message-square-detail'></i>
+          <span class="links_name">
+            Notifications
+          </span>
+        </a>
+      </li>
+      <li class="login">
+        <a href="#">
+          <span class="links_name login_out">
+            Logout
+          </span>
+          <i class='bx bx-log-out' id="log_out"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- End Sidebar -->
+  <section class="home_section">
+    <div class="topbar">
+      <div class="toggle">
+        <i class='bx bx-menu' id="btn"></i>
+      </div>
+      <div class="search_wrapper">
+        <label>
+          <span>
+            <i class='bx bx-search'></i>
+          </span>
+          <input type="search" placeholder="Search...">
+        </label>
+      </div>
+      <div class="user_wrapper">
+        <img src="img/user.jpg" alt="">
+      </div>
+    </div>
+    <!-- End Top Bar -->
+    <div class="card-boxes">
+      <div class="box">
+        <div class="right_side">
+          <div class="numbers">10</div>
+          <div class="box_topic">Total Requests</div>
+        </div>
+        <i class='bx bxs-calendar'></i>
+      </div>
+      <div class="box">
+        <div class="right_side">
+          <div class="numbers">7</div>
+          <div class="box_topic">Pending Approvals</div>
+        </div>
+        <i class='bx bx-time-five'></i>
+      </div>
+      <div class="box">
+        <div class="right_side">
+          <div class="numbers">3</div>
+          <div class="box_topic">Approved</div>
+        </div>
+        <i class='bx bx-check'></i>
+      </div>
+      <div class="box">
+        <div class="right_side">
+          <div class="numbers">0</div>
+          <div class="box_topic">Rejected</div>
+        </div>
+        <i class='bx bx-x'></i>
+      </div>
+    </div>
+    <!-- End Card Boxes -->
+    <div class="details">
+      <div class="leave_requests">
+        <div class="card_header">
+          <h2>Leave Requests</h2>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <td>STUDENT NAME</td>
+              <td>Leave Date</td>
+              <td>Reason</td>
+              <td>Status</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PRERIT SAHAI</td>
+              <td>2024-04-15</td>
+              <td>Family Emergency</td>
+              <td>Pending</td>
+            </tr>
+            <tr>
+              <td>SARTHAK BANSAL</td>
+              <td>2024-04-16</td>
+              <td>Medical Appointment</td>
+              <td>Approved</td>
+            </tr>
+            <!-- More leave requests go here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+ 
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      // call function
+      changeBtn();
+    });
+
+    function changeBtn() {
+      if(sidebar.classList.contains("open")) {
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+    }
+  </script>
+</body>
+</html>
