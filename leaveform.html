@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Leave Request</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <style>
+		.container {
+			max-width: 600px;
+			align-items: center;
+            margin: auto;
+			background-color: rgba(0, 0, 0, 0.1);
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			font-family: Arial, sans-serif;
+            padding-top:100px;
+            padding-bottom: 100px;
+		}
+
+		.form-group {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+
+		.form-group label {
+			margin-right: 15px;
+			min-width: 120px;
+			text-align: right;
+		}
+
+		.form-group input,
+		.form-group select {
+			flex-grow: 1;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-sizing:border-box;
+            width:fit-content;
+		}
+
+		.form-group input[type="date"],
+		.form-group input[type="time"] {
+			padding: 8px;
+		}
+
+		.form-group input:focus,
+		.form-group select:focus {
+			border-color: #ea0b2d;
+			outline: none;
+		}
+
+		.container-login100-form-btn {
+			margin-top: 20px;
+		}
+
+		.login100-form-btn {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 250px;
+            color: #fff;
+            text-transform: uppercase;
+            width: 40%;
+            height: 50px;
+            border-radius: 25px;
+            background: #11101d;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+		}
+
+		.login100-form-btn:hover {
+			background-color: greenyellow;
+            color: #000000;
+            cursor: pointer;
+		}
+        .box {
+            color: #000000;
+            background-color: #ffffff;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 50px;
+            padding-right: 50px;
+            width: 800px;
+            align-content: center;
+            border-radius: 2.5px;
+        }
+        .heading{
+            font-family: Poppins-Bold;
+            font-size: 24px;
+            color: #333333;
+            line-height: 1.2;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 54px;
+        }
+        .field-box{
+            font-family: Poppins-Medium;
+            font-size: 22px;
+            line-height: 1.5;
+            color: black;
+            width: 100%;
+            background: #d1dddf;
+            height: 50px;
+            border-radius: 10px;
+            padding: 0 30px 0 68px;
+            margin-bottom: 10px;
+        }
+        .label{
+            font-size:22px ;
+            font-family: Poppins-Medium;
+            font-weight:bolder;
+        }
+	</style>
+	<script type="module" src="database.js" defer></script>
+</head>
+<body style="background-color:rgb(1, 1, 27);">
+	<div class="container">
+		<div class="box">
+			<form>
+				<span class="heading">
+					<h1 style="font-family: sans-serif;"><b>LEAVE &nbsp REQUEST</b></h1>
+				</span>
+
+				<table>
+					<tr>
+						<td><label class="label" for="name">Name :</label></td>
+						<td><input class="field-box" type="text" name="Name" placeholder="Name" id="name"></td>
+					</tr>
+					<tr>
+						<td><label class="label" for="year">Year :</label></td>
+						<td><input class="field-box" type="text" name="Year" placeholder="Year" id="year"></td>
+					</tr>
+					<tr>
+						<td><label class="label"  for="blname">Block Name :</label></td>
+						<td><input class="field-box" type="text" name="Block Name" placeholder="Block Name" id="blname"></td>
+					</tr>
+					<tr>
+						<td><label class="label" for="roomno">Room No :</label></td>
+						<td><input class="field-box" type="text" name="Room No" placeholder="Room No" id="roomno"></td>
+					</tr>
+					<tr>
+						<td><label class="label" for="Departure Date">Date of Departure :</label></td>
+						<td><input class="field-box" type="date" name="Date of Departure" id="Departure Date"></td>
+					</tr>
+					<tr>
+						<td><label class="label" for="Leaving time">Time to leave Hostel :</label></td>
+						<td><input class="field-box" type="time" name="leave time" id="Leaving time"></td>
+					</tr>
+					<tr>
+						<td><label class="label" for="pname">Expected Return Date :&nbsp</label></td>
+						<td><input class="field-box" type="date" name="Expected Return Date" id="pname"></td>
+					</tr>
+					<tr>
+						<td><label class="label" for="Return time">Returning Time :</label></td>
+						<td><input class="field-box" type="time" name=" Returning Time" id="Return time"></td>
+					</tr>
+					<tr>
+						<td><label class="label" for="reason">Reason :</label></td>
+						<td><input class="field-box" type="text" name="Reason" placeholder="Reason of Leave" id="reason"></td>
+					</tr>
+					<tr>
+						<td><label  class="label" for="address">Destination Address :</label></td>
+						<td><input class="field-box" type="text" name="address" placeholder="Destination Address" id="address"></td>
+					</tr>
+				</table>
+
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn" id="leave_submit">
+						Submit
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="database.js"></script>
+	<script>
+		function redirectToPage() {
+		  var select = document.getElementById("otype");
+		  var selectedOption = select.options[select.selectedIndex].value;
+		  
+		  if (selectedOption !== "") {
+			window.location = selectedOption;
+		  }
+		}
+	</script>
+</body>
+</html>
