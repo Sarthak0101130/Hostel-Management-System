@@ -14,6 +14,20 @@
   font-family: 'Poppins', sans-serif;
 }
 
+a{
+  text-decoration: none;
+}
+
+.box{
+  height: 100%;
+  width: 100%;
+}
+
+button{
+  background-color: white;
+  border: none;
+}
+
 .sidebar {
   position: fixed;
   left: 0;
