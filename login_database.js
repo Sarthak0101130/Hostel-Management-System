@@ -41,13 +41,10 @@ submit.addEventListener("click", function (event) {
           // Redirect based on role should be inside this block
           switch (role) {
             case 'student':
-                window.location.href = "dashboard.html";
+                window.location.href = "student_dashboard.html";
                 break;
             case 'warden':
                 window.location.href = 'warden_dashboard.html';
-                break;
-            case 'security':
-                window.location.href = 'security_dashboard.html';
                 break;
             default:
                 console.error('Invalid role');
