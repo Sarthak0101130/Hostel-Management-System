@@ -5,16 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hostel Leave Management System</title>
-  <link rel="stylesheet" href="main.css">
-  <!-- box icon -->
+  <link rel="stylesheet" href="dashboard.css">
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <script type="module" src="dashboard.js" defer></script>
 </head>
 <body>
   <div class="sidebar">
     <div class="logo_details">
       <i class='bx bx-code-alt'></i>
       <div class="logo_name">
-        Hostel Leave
+        Student 
       </div>
     </div>
     <ul>
@@ -26,50 +26,39 @@
           </span>
         </a>
       </li>
+      
       <li>
-        <a href="#">
-          <i class='bx bx-user'></i>
-          <span class="links_name">
-            Students
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
+        <a href="1.html">
           <i class='bx bxs-calendar'></i>
           <span class="links_name">
-            Leave Requests
+            Leave History
           </span>
         </a>
       </li>
+
       <li>
         <a href="#">
           <i class='bx bxs-check-shield'></i>
           <span class="links_name">
-            Approvals
+            Settings
           </span>
         </a>
       </li>
       <li>
         <a href="#">
-          <i class='bx bx-message-square-detail'></i>
+          <i class='bx bx-log-out'></i>
           <span class="links_name">
-            Notifications
+            Log out
           </span>
         </a>
       </li>
-      <li class="login">
-        <a href="#">
-          <span class="links_name login_out">
-            Logout
-          </span>
-          <i class='bx bx-log-out' id="log_out"></i>
-        </a>
-      </li>
+
     </ul>
   </div>
   <!-- End Sidebar -->
-  <section class="home_section">
+
+
+  <section class="home_section">  
     <div class="topbar">
       <div class="toggle">
         <i class='bx bx-menu' id="btn"></i>
@@ -87,37 +76,34 @@
       </div>
     </div>
     <!-- End Top Bar -->
+
+
     <div class="card-boxes">
+
       <div class="box">
+
         <div class="right_side">
-          <div class="numbers">10</div>
-          <div class="box_topic">Total Requests</div>
+
+          <div class="box_topic">Request For Leave</div>
+
         </div>
         <i class='bx bxs-calendar'></i>
+
       </div>
+
       <div class="box">
         <div class="right_side">
-          <div class="numbers">7</div>
-          <div class="box_topic">Pending Approvals</div>
+         
+          <div class="box_topic">Total Approvals</div>
         </div>
         <i class='bx bx-time-five'></i>
       </div>
-      <div class="box">
-        <div class="right_side">
-          <div class="numbers">3</div>
-          <div class="box_topic">Approved</div>
-        </div>
-        <i class='bx bx-check'></i>
-      </div>
-      <div class="box">
-        <div class="right_side">
-          <div class="numbers">0</div>
-          <div class="box_topic">Rejected</div>
-        </div>
-        <i class='bx bx-x'></i>
-      </div>
+    
     </div>
+
     <!-- End Card Boxes -->
+
+<!-- 
     <div class="details">
       <div class="leave_requests">
         <div class="card_header">
@@ -145,14 +131,15 @@
               <td>Medical Appointment</td>
               <td>Approved</td>
             </tr>
-            <!-- More leave requests go here -->
+            
           </tbody>
         </table>
       </div>
-    </div>
+    </div> -->
+
   </section>
  
-
+  <script src="dashboard.js"></script>
   <script>
     let sidebar = document.querySelector(".sidebar");
     let closeBtn = document.querySelector("#btn");
@@ -171,5 +158,7 @@
       }
     }
   </script>
+
+
 </body>
 </html>

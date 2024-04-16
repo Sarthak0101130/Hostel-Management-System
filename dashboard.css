@@ -224,6 +224,10 @@
   grid-gap: 30px;
 }
 
+.home_section .card-boxes + .details .leave_requests {
+  display: block;
+}
+
 .card-boxes .box {
   position: relative;
   background: var(--white);
@@ -245,7 +249,7 @@
 .card-boxes .box .box_topic {
   position: relative;
   margin-top: 5px;
-  font-size: 1.1em;
+  font-size: 1.8em;
   color: var(--gray);
 }
 

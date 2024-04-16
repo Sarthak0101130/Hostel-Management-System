@@ -1,4 +1,3 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 import { getDatabase , set, ref} from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
@@ -19,7 +18,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
-
 const submit = document.getElementById("submit");
 
 submit.addEventListener("click", function (event) {
@@ -27,6 +25,7 @@ submit.addEventListener("click", function (event) {
   
     const email = document.getElementById("final_email").value;
     const password = document.getElementById("final_password").value;
+    const role = document.getElementById("role").value; // Corrected line
   
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -36,9 +35,23 @@ submit.addEventListener("click", function (event) {
           email : email,
           verified: "YES"
         })
-        // alert("User Logged In succesfully")
+    
         if(email && password){
-          window.location.href = "dashboard admin/index.html";
+          
+          // Redirect based on role should be inside this block
+          switch (role) {
+            case 'student':
+                window.location.href = "dashboard.html";
+                break;
+            case 'warden':
+                window.location.href = 'warden_dashboard.html';
+                break;
+            case 'security':
+                window.location.href = 'security_dashboard.html';
+                break;
+            default:
+                console.error('Invalid role');
+          }
         }
       })
       .catch((error) => {

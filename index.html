@@ -20,21 +20,36 @@
 					<span class="login100-form-title">
 						<h1>Welcome Back</h1>
 					</span>
+
+
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email" placeholder="Email" id="final_email">
 						<span class="focus-input100"></span>
 		
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+
+
+					<div class="wrap-input100 validate-input">
 						<input class="input100" type="password" name="pass" placeholder="Password" id="final_password">
 						<span class="focus-input100"></span>
-						
 					</div>
+
+					<div class="wrap-input100">
+                        <select class="input100" name="occupation-type" id="role">
+                        <option value="#">Select Role</option>
+                        <option value="student">Student</option>
+                        <option value="warden">Warden</option>
+                        <option value="security">Security Personnel</option>
+                        </select>
+					</div>
+
+
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" id="submit">
 							Login
 						</button>
 					</div>
+
 					<div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
@@ -43,6 +58,7 @@
 							Username / Password?
 						</a>
 					</div>
+					
 					<div class="text-center p-t-136">
 						<a class="txt2" href="signup_student.html">
 							Create your Account
