@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="module" src="warden_database.js" defer></script>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+
+			<div class="wrap-login100">
+                
+				<div class="pic">
+					<img src="images/Abes logo without Background.png" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form">
+					<span class="login100-form-title">
+						<h1>SIGN IN</h1>
+					</span>
+
+					<div class="wrap-input100">
+                        <select class="input100" name="occupation-type" id="otype">
+                        <option value="Warden">Warden</option>
+                        </select>
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="Name" placeholder="Warden Name" id="wname">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" id="wId" name="Id" placeholder="Warden Id Mo.">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="Mobile No." placeholder="Warden Mobile No." id="wmobile">
+						
+					</div>
+                    
+                    <div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="email" placeholder="Warden Email" id="wemail">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="password" name="pass" placeholder="Password" id="wpassword">
+
+					</div>
+
+					<div class="container-login100-form-btn">
+					<button class="login100-form-btn" id="warden_signup_submit">
+							Sign Up
+					</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="warden_database.js"></script>
+</body>
+</html>

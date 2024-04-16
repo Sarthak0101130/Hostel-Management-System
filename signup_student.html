@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="module" src="database.js" defer></script>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+
+			<div class="wrap-login100">
+                
+				<div class="pic">
+					<img src="images/Abes logo without Background.png" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form">
+					<span class="login100-form-title">
+						<h1>SIGN IN</h1>
+					</span>
+
+					<div class="wrap-input100">
+                        <select class="input100" name="occupation-type" id="otype" onchange="redirectToPage()">
+                        <option value="signup_student.html">Student</option>
+                        <option value="signup_warden.html">Warden</option></a>
+                        <option value="signup_securitypersonnel.html">Security Personnel</option>
+                        </select>
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="Name" placeholder="Name" id="name">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="Course Name" placeholder="Course Name" id="cname">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="Branch Name" placeholder="Branch Name" id="bname">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" id="Admissionno" name="Admission No." placeholder="Admission No.">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="Year" placeholder="Year" id="year">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="Block Name" placeholder="Block Name" id="blname">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="Room No" placeholder="Room No" id="roomno">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="Student Mobile No." placeholder="Student Mobile No." id="mobile">
+						
+					</div>
+                    
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="Parent Name" placeholder="Parent Name" id="pname">
+                        
+                    </div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="Parent Mobile No." placeholder="Parent Mobile No." id="pmobile">
+						
+					</div>
+
+
+                    <div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="email" placeholder="Email" id="email">
+						
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="password" name="pass" placeholder="Password" id="password">
+
+					</div>
+
+					<div class="container-login100-form-btn">
+					<button class="login100-form-btn" id="signup_submit">
+							Sign Up
+					</button>
+					</div>
+
+					
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="database.js"></script>
+	<script>
+		function redirectToPage() {
+		  var select = document.getElementById("otype");
+		  var selectedOption = select.options[select.selectedIndex].value;
+		  
+		  if (selectedOption !== "") {
+			window.location = selectedOption;
+		  }
+		}
+	</script>
+</body>
+</html>
