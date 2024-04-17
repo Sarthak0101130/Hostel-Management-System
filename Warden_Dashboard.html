@@ -8,10 +8,63 @@
     <title>Hostel Leave Management System</title>
     <link rel="stylesheet" href="dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <script type="module" src="dashboard.js" defer></script>
+    <style>
+        body {
+            --body-color: #e4e9e7;
+            --sidebar-color: #f0f0f0;
+            --primary-color: #007bff;
+            --primary-color-light: #cce5ff;
+            --toggle-color: #000000;
+            --text-color: #333333;
+        }
+
+        body.dark {
+            --body-color: #18191a;
+            --sidebar-color: #242526;
+            --primary-color: #3a3b3c;
+            --primary-color-light: #3a3b3c;
+            --toggle-color: #fff;
+            --text-color: #ccc;
+        }
+
+        .home_section {
+            background-color: var(--body-color);
+            color: var(--text-color);
+        }
+
+        .topbar .search_wrapper label span i {
+    color: var(--text-color);
+        }
+
+
+
+
+.topbar .toggle i,
+.topbar .search_wrapper label span i {
+    color: #000;
+}
+
+/* Dark mode styles */
+.dark {
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+}
+#searchbar{
+    font-size: 18px;
+}
+
+
+
+
+        /* Add other styles using CSS variables as needed */
+    </style>
 </head>
 
-<body>
+<body class="light">
     <div class="sidebar">
         <div class="logo_details">
             <i class='bx bx-code-alt'></i>
@@ -55,6 +108,20 @@
                 </a>
             </li>
 
+
+            <li class="mode">
+                <div class="sun-moon" id="modeSwitch">
+                    <i class='bx bx-moon icon moon'></i>
+                    <i class='bx bx-sun icon sun'></i>
+                </div>
+                <span class="mode-text text">Dark mode</span>
+
+                <div class="toggle-switch">
+                    <span class="switch" id="toggle"></span>
+                </div>
+            </li>
+
+
         </ul>
     </div>
     <!-- End Sidebar -->
@@ -62,15 +129,15 @@
 
     <section class="home_section">
         <div class="topbar">
-            <div class="toggle">
-                <i class='bx bx-menu' id="btn"></i>
+            <div class="toggle" id="btn">
+                <i class='bx bx-menu'></i>
             </div>
             <div class="search_wrapper">
                 <label>
                     <span>
                         <i class='bx bx-search'></i>
                     </span>
-                    <input type="search" placeholder="Search...">
+                    <input type="search" placeholder="Search..."  id="searchbar">
                 </label>
             </div>
             <div class="user_wrapper">
@@ -78,7 +145,7 @@
             </div>
         </div>
         <!-- End Top Bar -->
-        
+
         <div class="card-boxes">
 
             <div class="box">
@@ -88,7 +155,7 @@
                         <a href="#">
                             <div class="box_topic">Pending Requests</div>
                         </a>
-                        
+
                     </button>
                 </div>
                 <i class='bx bxs-calendar'></i>
@@ -117,31 +184,39 @@
 
         </div>
 
-   
-
     </section>
 
-    <script src="dashboard.js"></script>
     <script>
         let sidebar = document.querySelector(".sidebar");
         let closeBtn = document.querySelector("#btn");
+        let modeSwitch = document.querySelector("#modeSwitch");
+        let body = document.querySelector("body");
+        let modeText = document.querySelector(".mode-text");
 
         closeBtn.addEventListener("click", () => {
             sidebar.classList.toggle("open");
-            // call function
             changeBtn();
         });
 
         function changeBtn() {
             if (sidebar.classList.contains("open")) {
-                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+                closeBtn.innerHTML = '<i class="bx bx-menu-alt-right"></i>';
             } else {
-                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+                closeBtn.innerHTML = '<i class="bx bx-menu"></i>';
             }
         }
+
+        modeSwitch.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            if (body.classList.contains("dark")) {
+                modeText.innerText = "Light mode";
+
+            } else {
+                modeText.innerText = "Dark mode";
+            }
+        });
     </script>
-
-
 </body>
 
 </html>

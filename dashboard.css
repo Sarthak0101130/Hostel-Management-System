@@ -504,3 +504,121 @@ button{
     justify-content: flex-end;
   }
 }
+
+
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f1f1f1;
+  transition: background-color 0.5s ease;
+}
+
+.sidebar {
+  background-color: #fff; 
+  transition: background-color 0.5s ease;
+}
+
+
+.dark {
+  background-color: #333; 
+}
+
+.dark .sidebar {
+  background-color: #222;
+}
+
+.dark .links_name,
+.dark .text {
+  color: #fff;
+}
+
+.dark .bx {
+  color: #fff; /
+}
+
+
+.sun-moon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sun-moon .icon {
+  font-size: 20px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.dark .sun-moon .sun {
+  opacity: 0;
+}
+
+.dark .sun-moon .moon {
+  opacity: 1;
+} */
+
+
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f1f1f1; /* Light mode default */
+  transition: background-color 0.5s ease;
+}
+
+/* Content area (everything except sidebar) */
+.content {
+  min-height: 100vh; /* Ensures content fills viewport height */
+  padding: 20px; /* Add some padding for content area */
+  transition: background-color 0.5s ease;
+}
+
+/* Dark mode styles */
+.dark {
+  background-color: #333; /* Dark mode background */
+}
+
+.dark .content {
+  background-color: #222; /* Dark mode content area background */
+}
+
+.dark .links_name,
+.dark .text {
+  color: #fff; /* Light text for dark mode elements */
+}
+
+.dark .bx {
+  color: #fff; /* Light icons for dark mode elements */
+}
+
+/* Sun and moon icons */
+.sun-moon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sun-moon .icon {
+  font-size: 20px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.dark .sun-moon .sun {
+  opacity: 0;
+}
+
+.dark .sun-moon .moon {
+  opacity: 1;
+}
+
+body.dark{
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+  --primary-color: #3a3b3c;
+  --primary-color-light: #3a3b3c;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+}
