@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Number verification with OTP</title>
+<style>
+    body{
+		background-color: #11101D;
+	}
+	.container {
+		width: 450px;
+		height: 350px;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+		margin: auto;
+		background:white;
+		border-radius: 5%;
+	}
+	.bx{
+		margin-left: 15%;
+		margin-top: 20%;
+	}
+	#number, #verificationcode {
+		width: 300px;
+		padding: 10px;
+		font-size: 20px;
+		margin-bottom: 5px;
+		outline: none;
+		margin-left: 15%;
+		margin-right: 25%;
+		margin-top: 12px;
+		border-radius: 10px;
+	}
+	#text{
+		background:white;
+		background-color:white;
+		height:30px;
+		border: 20px;
+		border-radius: 12px;
+		text-align: center;
+		font-size: larger;
+		font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		margin-bottom:5px ;
+		color:#11101D;
+		outline:none;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		padding:10px 30px;
+		row-gap: 20px;
+		font-size: 1.35rem;
+		color: #333;
+		font-weight: 500;
+		
+	}
+	#recaptcha-container {
+		margin-bottom: 5px;
+		margin-left: 15%;
+		padding: 4px;
+	}
+	#send, #verify {
+		width: 70%;
+		height: 40px;
+		outline: none;
+		font-size: larger;
+		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		background-color: #11101D;
+		background: #11101D;
+		padding: 30px 65px;
+		border-radius: 12px;
+		row-gap: 20px;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		color: white;
+		padding: 10px;
+		margin-left: 15%;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		
+		
+	}
+	.p-conf, .n-conf {
+		height: 20px;
+		width: 95%;
+		border: 2px solid green;
+		border-radius: 4px;
+		padding: 8px 10px;
+		margin: 4px 0px;
+		background-color: rgba(0, 249, 12, 0.5);
+		display: none;
+		text-align: center;
+		margin-bottom: 0px;
+		
+	}
+	.n-conf {
+		border-color: red;
+		background-color: rgba(255, 0, 4, 0.5);
+	}
+	.container header{
+		height: 65px;
+		width: 65px;
+		background:#11101D ;
+		color: #fff;
+		font-size: 2.5rem;
+		border-radius: 50%;
+		margin-left: 190px;
+		margin-top: 8%;
+	}
+	#write{
+		font-size: 1.35rem;
+  		color: #333;
+  		font-weight: 500;
+		margin-left: 150px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+
+	}
+
+</style>
+<script src="student_database.js"></script>
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container">
+		<div id="sender" style="display: block;">
+			<div id="text"><strong>Enter Your Number</strong></div>
+			<input type="text" id="number" placeholder="930XXXXXXX">
+			<div id="recaptcha-container"></div>
+			<!-- <a href="otp.html"> -->
+			<input type="button" id="send" value="Send" onClick="phoneAuth()" onclick="changetext">
+			<!-- </a> -->
+		</div>
+		<div id="verifier" style="display: none">
+			<header>
+				<i class="bx bxs-check-shield"></i>
+			  </header>
+			<div id="write">Enter OTP Code</div>
+			<input type="text" id="verificationcode" placeholder="OTP Code">
+			<input type="button" id="verify" value="Verify" onClick="codeverify()">
+			<div class="p-conf">Number Verified</div>
+			<div class="n-conf">OTP ERROR</div>
+		</div>
+	</div>
+<!--	add firebase SDK-->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js"></script>
+<script>
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+
+    apiKey: "AIzaSyCeDhIpqwSE1jCT07CNpun6XPmUmoo2e6A",
+    authDomain: "otp-verification-c02b0.firebaseapp.com",
+    projectId: "otp-verification-c02b0",
+    storageBucket: "otp-verification-c02b0.appspot.com",
+    messagingSenderId: "540678631626",
+    appId: "1:540678631626:web:293a7f95a55f25976b4433",
+    measurementId: "G-T43ES1V1SB"
+};
+	firebase.initializeApp(firebaseConfig);
+render();
+function render(){
+	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+	recaptchaVerifier.render();
+}
+	// function for send message
+function phoneAuth(){
+	
+	var number = document.getElementById('number').value;
+	var newnumber = '+91'+number ;
+	
+	firebase.auth().signInWithPhoneNumber(newnumber, window.recaptchaVerifier).then(function(confirmationResult){
+		
+		window.confirmationResult = confirmationResult;
+		coderesult = confirmationResult;
+		
+		document.getElementById('sender').style.display = 'none';
+		
+		document.getElementById('verifier').style.display = 'block';
+
+	}).catch(function(error){
+		alert(error.message);
+	});
+}
+function changetext(){
+	document.getElementById("text").innerHTML = "Enter OTP Code";
+}
+
+
+	// function for code verify
+function codeverify(){
+	var code = document.getElementById('verificationcode').value;
+	coderesult.confirm(code).then(function(){
+		document.getElementsByClassName('p-conf')[0].style.display = 'block';
+		document.getElementsByClassName('n-conf')[0].style.display = 'none';
+	}).catch(function(){
+		document.getElementsByClassName('p-conf')[0].style.display = 'none';
+		document.getElementsByClassName('n-conf')[0].style.display = 'block';
+	})
+}
+
+</script>
+<script src="student_database.js"></script>
+</body>
+</html>
