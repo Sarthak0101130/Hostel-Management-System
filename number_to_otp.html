@@ -149,13 +149,13 @@
 	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
 
-    apiKey: "AIzaSyCeDhIpqwSE1jCT07CNpun6XPmUmoo2e6A",
-    authDomain: "otp-verification-c02b0.firebaseapp.com",
-    projectId: "otp-verification-c02b0",
-    storageBucket: "otp-verification-c02b0.appspot.com",
-    messagingSenderId: "540678631626",
-    appId: "1:540678631626:web:293a7f95a55f25976b4433",
-    measurementId: "G-T43ES1V1SB"
+    apiKey: "AIzaSyBR1zfax1XxIPVtSl8UkJQUQfLSfR4Zb_0",
+    authDomain: "hostel-management-system-b9257.firebaseapp.com",
+    projectId: "hostel-management-system-b9257",
+    storageBucket: "hostel-management-system-b9257.appspot.com",
+    messagingSenderId: "240932865351",
+    appId: "1:240932865351:web:2fbe2834a7500fd9ba7862",
+    measurementId: "G-L02FZ4J1M8"
 };
 	firebase.initializeApp(firebaseConfig);
 render();
@@ -193,6 +193,7 @@ function codeverify(){
 	coderesult.confirm(code).then(function(){
 		document.getElementsByClassName('p-conf')[0].style.display = 'block';
 		document.getElementsByClassName('n-conf')[0].style.display = 'none';
+		window.location.href = "index.html"
 	}).catch(function(){
 		document.getElementsByClassName('p-conf')[0].style.display = 'none';
 		document.getElementsByClassName('n-conf')[0].style.display = 'block';

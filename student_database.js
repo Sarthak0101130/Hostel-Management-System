@@ -57,12 +57,12 @@ signup_submit.addEventListener("click", function (event) {
           }).then(() => {
               alert("Student Signed Up successfully");
               // Redirect user to desired page after signup
-              window.location.href = "dashboard admin/number_to_otp.html";
+              window.location.href = "number_to_otp.html";
           }).catch((error) => {
               alert("Error: " + error.message);
           });
       })
       .catch((error) => {
           alert("Error: " + error.message);
-      });
+    });
 });
