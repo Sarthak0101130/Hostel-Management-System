@@ -35,7 +35,7 @@ button{
   width: 250px;
   height: 100%;
   padding-left: 20px;
-  background: var(--dark-blue);
+  /* background: var(--dark-blue); */
   transition: all 0.5s ease;
   z-index: 99;
 }
@@ -590,7 +590,7 @@ body {
 }
 
 .dark .bx {
-  color: #fff; /* Light icons for dark mode elements */
+  color: rgb(0, 0, 0)* Light icons for dark mode elements */
 }
 
 /* Sun and moon icons */
